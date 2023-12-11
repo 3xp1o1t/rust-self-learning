@@ -4,22 +4,29 @@
 
 - [Learning Rust](#learning-rust)
   - [Table of Contents](#table-of-contents)
-  - [About ](#about-)
-  - [Getting Started ](#getting-started-)
+  - [About](#about)
+  - [Useful resources](#useful-resources)
+  - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Installing](#installing)
-  - [Usage ](#usage-)
+  - [Usage](#usage)
 
-## About <a name = "about"></a>
+## About
 
 Colección de ejercicios del libro oficial de Rust para aprender un poco del lenguaje y las ventajas del mismo
 sobre C/C++, ademas como pasatiempo para el desarrollo de otro tipo de sistemas que no sean meramente web.
 
 Por otra parte me sirve para complementar mi aprendizaje de aplicaciones multiplataforma con Tauri y Rust.
 
-## Getting Started <a name = "getting_started"></a>
+## Useful resources
 
-Solo se debe clonar y ejecurar cargo run sobre cada carpeta del proyecto.
+- [Crate registry]<https://crates.io/>
+- [Rust Book ES]<https://rustlanges.github.io/rust-book-es/print.html>
+- [Rustlings]<https://github.com/rust-lang/rustlings>
+
+## Getting Started
+
+Solo se debe clonar y ejecutar cargo run sobre cada carpeta del proyecto.
 
 ### Prerequisites
 
@@ -38,6 +45,6 @@ cd <any folder>
 cargo run
 ```
 
-## Usage <a name = "usage"></a>
+## Usage
 
 Actualmente estoy usando Debian 12 bookworm y Windows 11 (para cosas de net :u)
