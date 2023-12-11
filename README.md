@@ -23,6 +23,7 @@ Por otra parte me sirve para complementar mi aprendizaje de aplicaciones multipl
 - [Crate registry]<https://crates.io/>
 - [Rust Book ES]<https://rustlanges.github.io/rust-book-es/print.html>
 - [Rustlings]<https://github.com/rust-lang/rustlings>
+- [Docs]<https://doc.rust-lang.org/std/index.html>
 
 ## Getting Started
 
