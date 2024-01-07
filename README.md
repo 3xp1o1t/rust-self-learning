@@ -9,6 +9,7 @@
   - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Installing](#installing)
+  - [Proyectos](#proyectos)
   - [Usage](#usage)
 
 ## About
@@ -45,6 +46,15 @@ git clone <this repo>
 cd <any folder>
 cargo run
 ```
+
+## Proyectos
+
+1. Xoxo-game es el juego del gato clasico bastante simple
+   1. Vectores, Estructuras de control (For, If), Leer/Imprimir datos, Match
+2. Actix-api ejemplo de como construir un API con la libreria Actix-web
+3. Shelly ejemplo de una shell en rust.
+4. Minigrep ejemplo de un grep basico.
+   1. Organizar codigo, vectores y strings, error handling, traits/lifetimes, testing.
 
 ## Usage
 
