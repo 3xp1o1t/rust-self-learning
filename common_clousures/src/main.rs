@@ -27,4 +27,11 @@ fn main() {
     let numbers = vec![1, 2, 3, 4, 5, 6, 8, 9, 10];
     let all_positive = numbers.iter().all(|&x| x > 0);
     println!("All positive? {}", all_positive);
+
+    // Enumerate used for index and values
+    let numbers = vec![10, 20, 30];
+
+    for (index, value) in numbers.iter().enumerate() {
+        println!("Index: {} - Value: {}", index, value);
+    }
 }
