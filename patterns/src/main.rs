@@ -1,11 +1,14 @@
 fn main() {
-    if_let_pattern()
+    if_let_pattern();
+    while_let_pattern();
 }
 
 fn if_let_pattern() {
+    println!("# If let pattern!");
     // if let using else if let and else
     let favorite_color: Option<&str> = None;
     let is_saturday: bool = false;
+    // This is the way -> 42.parse = true, others = false.
     let age: Result<u8, _> = "42".parse();
 
     if let Some(color) = favorite_color {
@@ -13,6 +16,7 @@ fn if_let_pattern() {
     } else if is_saturday {
         println!("Saturday best day");
     } else if let Ok(age) = age {
+        // Ok(age) != age -> Shadowing age variable
         if age > 28 {
             println!("Using black as background color!");
         } else {
@@ -20,5 +24,21 @@ fn if_let_pattern() {
         }
     } else {
         println!("Using cyan as background color!");
+    }
+}
+
+fn while_let_pattern() {
+    println!("# While let pattern");
+    // poping a vector using while let
+    let mut stack = Vec::new();
+
+    stack.push(1);
+    stack.push(8);
+    stack.push(222);
+    stack.push(58);
+
+    // pop() -> returns an Option<T> - Some = item | None if stack is empty
+    while let Some(top) = stack.pop() {
+        println!("{}", top);
     }
 }
