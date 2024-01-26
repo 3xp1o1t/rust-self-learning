@@ -13,6 +13,7 @@ fn main() {
     or_pattern();
     char_range_pattern();
     match_struct();
+    ignore_values_tuple();
 }
 
 fn if_let_pattern() {
@@ -131,5 +132,16 @@ fn match_struct() {
         Point { x, y: 0 } => println!("On the x axis at {x}"),
         Point { x: 0, y } => println!("On the y axis at {y}"), // this will be executed bc x = 0, first value of p Point
         Point { x, y } => println!("On neither axis: ({x}, {y})"), // This code never is execute.
+    }
+}
+
+fn ignore_values_tuple() {
+    println!("# Ignoring values with _");
+    let values = (1, 2, 3, 4, 5);
+
+    match values {
+        (first, _, third, _, five) => {
+            println!("Some values: {first}, {third} and {five}");
+        }
     }
 }
