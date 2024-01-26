@@ -6,6 +6,7 @@ fn main() {
     params_pattern(&(3, 5));
     match_literals();
     match_named_vars();
+    or_pattern();
 }
 
 fn if_let_pattern() {
@@ -89,4 +90,18 @@ fn match_named_vars() {
     }
 
     println!("at the end: x = {:?}, y = {y}", x);
+}
+
+fn or_pattern() {
+    // this is like bit operations or conjuntion using or |
+    println!("# Multiple pattern");
+    let x = 4;
+
+    match x {
+        1 => println!("one"),
+        2 => println!("two"),
+        3 => println!("three"),
+        4 | 5 => println!("four or five"),
+        _ => println!("Anything else"),
+    }
 }
