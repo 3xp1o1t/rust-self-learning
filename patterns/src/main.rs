@@ -5,6 +5,7 @@ fn main() {
     for_pattern();
     params_pattern(&(3, 5));
     match_literals();
+    match_named_vars();
 }
 
 fn if_let_pattern() {
@@ -74,4 +75,18 @@ fn match_literals() {
         3 => println!("three"),
         _ => println!("Anything else"),
     }
+}
+
+fn match_named_vars() {
+    println!("# Match named variables");
+    let x = Some(5);
+    let y = 10;
+
+    match x {
+        Some(50) => println!("Got 50!"),
+        Some(y) => println!("Matched, y = {y}"), // This run bc `y` is a new variable in the match context {}
+        _ => println!("Default case, x = {:?}", x),
+    }
+
+    println!("at the end: x = {:?}, y = {y}", x);
 }
