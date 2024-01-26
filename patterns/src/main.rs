@@ -7,6 +7,7 @@ fn main() {
     match_literals();
     match_named_vars();
     or_pattern();
+    char_range_pattern();
 }
 
 fn if_let_pattern() {
@@ -103,5 +104,16 @@ fn or_pattern() {
         3 => println!("three"),
         4 | 5 => println!("four or five"),
         _ => println!("Anything else"),
+    }
+}
+
+fn char_range_pattern() {
+    println!("# Char range matching");
+    let x = 'x';
+
+    match x {
+        'a'..='j' => println!("early ASCII letter"),
+        'k'..='z' => println!("late ASCII letter"),
+        _ => println!("something else"),
     }
 }
