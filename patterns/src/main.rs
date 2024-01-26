@@ -2,6 +2,7 @@ fn main() {
     if_let_pattern();
     while_let_pattern();
     for_pattern();
+    params_pattern(&(3, 5));
 }
 
 fn if_let_pattern() {
@@ -52,4 +53,10 @@ fn for_pattern() {
     for (index, value) in values.iter().enumerate() {
         println!("{} is at index {}", value, index);
     }
+}
+
+fn params_pattern(&(x, y): &(i32, i32)) {
+    println!("Function Params Pattern");
+    // Function params can be patterns
+    println!("Current location: ({}, {}) ", x, y);
 }
