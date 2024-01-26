@@ -1,6 +1,7 @@
 fn main() {
     if_let_pattern();
     while_let_pattern();
+    for_pattern();
 }
 
 fn if_let_pattern() {
@@ -40,5 +41,15 @@ fn while_let_pattern() {
     // pop() -> returns an Option<T> - Some = item | None if stack is empty
     while let Some(top) = stack.pop() {
         println!("{}", top);
+    }
+}
+
+fn for_pattern() {
+    println!("# For pattern");
+    // the value after the reserved keyword `for` it is a pattern
+    let values = vec!['r', 'u', 's', 't'];
+
+    for (index, value) in values.iter().enumerate() {
+        println!("{} is at index {}", value, index);
     }
 }
