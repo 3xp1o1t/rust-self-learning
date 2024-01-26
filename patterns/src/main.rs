@@ -1,8 +1,10 @@
 fn main() {
+    // fold functions keyboard = ctrl + shift + [] - [close ]open
     if_let_pattern();
     while_let_pattern();
     for_pattern();
     params_pattern(&(3, 5));
+    match_literals();
 }
 
 fn if_let_pattern() {
@@ -56,7 +58,20 @@ fn for_pattern() {
 }
 
 fn params_pattern(&(x, y): &(i32, i32)) {
-    println!("Function Params Pattern");
+    println!("# Function Params Pattern");
     // Function params can be patterns
     println!("Current location: ({}, {}) ", x, y);
+}
+
+fn match_literals() {
+    println!("# Match pattern");
+
+    let x = 3;
+
+    match x {
+        1 => println!("one"),
+        2 => println!("two"),
+        3 => println!("three"),
+        _ => println!("Anything else"),
+    }
 }
