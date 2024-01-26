@@ -1,3 +1,7 @@
+struct Point {
+    x: i32,
+    y: i32,
+}
 fn main() {
     // fold functions keyboard = ctrl + shift + [] - [close ]open
     if_let_pattern();
@@ -8,6 +12,7 @@ fn main() {
     match_named_vars();
     or_pattern();
     char_range_pattern();
+    match_struct();
 }
 
 fn if_let_pattern() {
@@ -115,5 +120,16 @@ fn char_range_pattern() {
         'a'..='j' => println!("early ASCII letter"),
         'k'..='z' => println!("late ASCII letter"),
         _ => println!("something else"),
+    }
+}
+
+fn match_struct() {
+    // match reach first value at struct
+    let p = Point { x: 0, y: 9 };
+
+    match p {
+        Point { x, y: 0 } => println!("On the x axis at {x}"),
+        Point { x: 0, y } => println!("On the y axis at {y}"), // this will be executed bc x = 0, first value of p Point
+        Point { x, y } => println!("On neither axis: ({x}, {y})"), // This code never is execute.
     }
 }
