@@ -15,6 +15,7 @@ fn main() {
     match_struct();
     ignore_values_tuple();
     match_guard_with_or();
+    at_binding();
 }
 
 fn if_let_pattern() {
@@ -156,5 +157,24 @@ fn match_guard_with_or() {
         // (4 | 5 | 6) if y <- El patron se comporta de esta manera.
         4 | 5 | 6 if y => println!("All is TRUE!"),
         _ => println!("Something else it's NOT TRUE!"),
+    }
+}
+
+enum Message {
+    Hello { id: i32 },
+}
+
+fn at_binding() {
+    println!("# AT @ binding");
+    let msg = Message::Hello { id: 5 };
+
+    match msg {
+        // El binding @ expone un valor para usarlo en el código de la opción del match como id_variable.
+        // Esto ayuda a omitir el Shadowing como en el ejemplo anterior.
+        Message::Hello {
+            id: id_variable @ 3..=7,
+        } => println!("Found an id in range: {}", id_variable),
+        Message::Hello { id: 10..=12 } => println!("Found an id in another range"),
+        Message::Hello { id } => println!("Found some other id: {}", id),
     }
 }
