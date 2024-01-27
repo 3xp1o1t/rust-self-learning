@@ -14,6 +14,7 @@ fn main() {
     char_range_pattern();
     match_struct();
     ignore_values_tuple();
+    match_guard_with_or();
 }
 
 fn if_let_pattern() {
@@ -143,5 +144,17 @@ fn ignore_values_tuple() {
         (first, _, third, _, five) => {
             println!("Some values: {first}, {third} and {five}");
         }
+    }
+}
+
+fn match_guard_with_or() {
+    println!("# Match Guard with OR");
+    let x = 4;
+    let y = false;
+
+    match x {
+        // (4 | 5 | 6) if y <- El patron se comporta de esta manera.
+        4 | 5 | 6 if y => println!("All is TRUE!"),
+        _ => println!("Something else it's NOT TRUE!"),
     }
 }
