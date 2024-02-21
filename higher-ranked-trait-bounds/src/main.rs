@@ -7,6 +7,9 @@ fn main() {
     let integers = vec![2, 4, 6];
     let closure_integers = |item: &i32| println!("Numero Entero: {}", item);
     process_vector(&integers, closure_integers);
+
+    let cadenas = vec!["hola", "mundo", "rust"];
+    process_vector(&cadenas, |item| println!("Procesando: {}", item));
 }
 
 // Higher Ranked Trait Bound (HRTBs) ejemplo 1
@@ -27,9 +30,17 @@ trait Processor<T> {
 }
 
 // Implementar el trait en los enteros
+// () -> Permite implementar Tipos sin necesidad de almacenar o interactuar con sus valores.
+// () en los traits es como un fantasma, pero sirve para aprovechar la información del tipo
 impl Processor<i32> for () {
     fn process(&self, item: &i32) {
         println!("Procesando enteros: {}", item);
+    }
+}
+
+impl Processor<&str> for () {
+    fn process(&self, item: &&str) {
+        println!("Procesando strings: {}", item);
     }
 }
 
